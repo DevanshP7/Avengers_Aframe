@@ -51,7 +51,7 @@ AFRAME.registerComponent("comic-container",{
             textEl = this.createText(item, position)
 
             this.placesContainer.appendChild(borderEl)
-            this.placesContainer.appendChild(thumbnailEl)
+            borderEl.appendChild(thumbnailEl)
             borderEl.appendChild(textEl)
         }
     },
@@ -65,6 +65,7 @@ AFRAME.registerComponent("comic-container",{
         border.setAttribute('material', 'color', 'blue')
         border.setAttribute('id', id)
         border.setAttribute('position', position)
+        border.setAttribute('cursor-event',{})
         return border
     },
     createThumbnail: function (position,item) {
@@ -78,7 +79,7 @@ AFRAME.registerComponent("comic-container",{
         thumbnail.setAttribute('material', {
             src: item.url
         })
-        thumbnail.setAttribute('position',{x:position.x,y:position.y,z:position.z+0.1})
+        thumbnail.setAttribute('position',{x:0,y:0,z:0.1})
         return thumbnail
     },
     createText: function (item, position) {

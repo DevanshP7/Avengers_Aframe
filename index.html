@@ -6,16 +6,17 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="poster.js"></script>
+    <script src="cursor.js"></script>
 </head>
 <body>
     <a-scene id="main-scene">
         <a-sky id="main-container" radius="5000" color="#98DAFC"></a-sky>
-        <a-entity id="places-container" comic-container></a-entity>
+        <a-entity id="places-container" comic-container cursor-event></a-entity>
         <a-camera id="camera" wasd-controls="enabled:false;">
             <a-entity position="0 0.73 -1" text="font: exo2bold; align: center; width: 2; color: purple; value: Virtual Comic Store">
                 <a-entity position="0 -0.1 0" text="font: exo2bold; align: center; width: 1; color: indigo; value: Get Your Favourite Comics!"></a-entity>
             </a-entity>
-            <a-entity></a-entity>
+            <a-entity cursor position="0 0 -39" geometry="primitive:torus;radius:1;radius-tubular:0.05" material="color:white"></a-entity>
         </a-camera>
     </a-scene>
 </body>
