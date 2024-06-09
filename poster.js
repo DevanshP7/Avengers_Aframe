@@ -29,7 +29,7 @@ AFRAME.registerComponent("comic-container", {
         places_container_main = document.querySelector('#places-container')
         comic_values = places_container_main.getAttribute('comic-container')
         details_id = comic_values.selected_card
-        img_id_upload = `images_movies/i_${details_id}.png`
+        img_id_upload = `i_${details_id}.png`
         img_el.setAttribute('material',{src:img_id_upload})
         places_container_main.setAttribute('position',{x:0,y:0,z:-32})
         data_list = {
