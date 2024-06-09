@@ -5,6 +5,7 @@ AFRAME.registerComponent('cursor-event',{
     init:function(){
         this.handleMouseEnterEvent()
         this.handleMouseExitEvent()
+        this.handeMouseClickEvent()
     },
     getPlacesReverse:function(){
         var id = this.el.getAttribute('id')
@@ -32,6 +33,19 @@ AFRAME.registerComponent('cursor-event',{
     handleMouseExitEvent:function(){
         this.el.addEventListener('mouseleave',(e)=>{
             this.getPlacesReverse()
+        })
+    },
+    handeMouseClickEvent:function(){
+        this.el.addEventListener('click',(e)=>{
+            var place_container = document.querySelector('#places-container')
+            var {state} = place_container.getAttribute('comic-container')
+            if(state=='place_list'){
+                var id = this.el.getAttribute('id')
+                id_array = ['doctorstrange','spiderman','infinitywar','endgame']
+                if(id_array.includes(id)){
+                    place_container.setAttribute('comic-container',{state:'view',selected_card:id})
+                }
+            }
         })
     }
 })
